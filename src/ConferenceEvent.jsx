@@ -287,7 +287,17 @@ const ConferenceEvent = () => {
                 <h1>Meals Selection</h1>
               </div>
 
-              <div className="input-container venue_selection"></div>
+              <div className="input-container venue_selection">
+                <label htmlFor="numberOfPeople"><h3>Number of People:</h3></label>
+                <input
+                  type="number"
+                  id="numberOfPeople"
+                  min="1"
+                  value={numberOfPeople}
+                  onChange={(e) => setNumberOfPeople(parseInt(e.target.value) || 1)}
+                  className="input_box5"
+                />
+              </div>
               <div className="meal_selection">
                 {mealsItems.map((meal, index) => (
                   <div className="meal_item" key={index} style={{ padding: 15 }}>
